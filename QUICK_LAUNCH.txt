@@ -1,0 +1,86 @@
+# 🚀 QUICK LAUNCH CARD
+
+**Everything ready. Just execute these steps tomorrow.**
+
+---
+
+## Step 1: Test Locally (Windows PowerShell)
+```powershell
+# Terminal 1
+cd "e:\AI Infra products\Enterprise RAG platform\backend"
+python -m venv .venv
+.\.venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+uvicorn main:app --reload --port 8000
+
+# Terminal 2
+cd "e:\AI Infra products\Enterprise RAG platform\frontend"
+npm install
+npm run dev
+
+# Browser: http://localhost:5173
+# Signup: admin@acme.com / Pass1234
+```
+
+---
+
+## Step 2: Prepare for Prod
+**Create `.env` file in project root:**
+```
+MVP_JWT_SECRET=<random-32-char-secret-here>
+OPENAI_API_KEY=sk-your-openai-key-here
+```
+
+---
+
+## Step 3: Deploy to VM
+**On Linux VM (Ubuntu 22.04+):**
+```bash
+git clone <your-repo> /opt/rag-mvp
+cd /opt/rag-mvp
+bash deploy.sh
+```
+
+**Then:**
+- Backend: http://<vm-ip>:8000
+- Frontend: http://<vm-ip>:5173
+
+---
+
+## Step 4: Send Pilots
+Copy-paste from `PILOT_EMAIL.md` to 2–3 target customers.
+
+---
+
+## Critical Files
+| File | Purpose |
+|------|---------|
+| `backend/main.py` | FastAPI app |
+| `frontend/src/App.jsx` | Admin UI |
+| `docker-compose.yml` | Local dev |
+| `deploy.sh` | Production deploy |
+| `STARTUP_GUIDE.md` | Detailed launch steps |
+| `PILOT_EMAIL.md` | Customer outreach |
+
+---
+
+## Troubleshooting
+```bash
+# View logs
+docker logs rag-mvp-backend
+
+# Reset data
+docker volume rm rag-mvp_rag-data
+
+# Restart
+docker compose restart
+```
+
+---
+
+## Success = Pilot Launches Next Week
+Target: 2+ pilots ingesting their knowledge bases.
+
+---
+
+**You've got this. 🎯**

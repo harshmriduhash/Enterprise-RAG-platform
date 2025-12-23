@@ -1,0 +1,30 @@
+version: "3.8"
+
+services:
+  backend:
+    build: ./backend
+    container_name: rag-mvp-backend
+    environment:
+      MVP_JWT_SECRET: ${MVP_JWT_SECRET:-dev-secret-change-in-prod}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:-}
+      MVP_DB: /data/mvp.sqlite3
+    ports:
+      - "8000:8000"
+    volumes:
+      - rag-data:/data
+    restart: unless-stopped
+
+  frontend:
+    build: ./frontend
+    container_name: rag-mvp-frontend
+    environment:
+      VITE_API_BASE: http://backend:8000
+    ports:
+      - "5173:3000"
+    depends_on:
+      - backend
+    restart: unless-stopped
+
+volumes:
+  rag-data:
+    driver: local
