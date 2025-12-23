@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './components/Nav'
 import Dashboard from './pages/Dashboard'
-import IngestPage from './pages/IngestPage'
-import DocsPage from './pages/DocsPage'
-import UsagePage from './pages/UsagePage'
-import AuthPage from './pages/AuthPage'
+import Ingest from './pages/Ingest'
+import Documents from './pages/Documents'
+import Usage from './pages/Usage'
+import Auth from './pages/Auth'
 
 export default function App(){
   const [token, setToken] = useState(localStorage.getItem('admin_token'))
@@ -34,6 +34,5 @@ export default function App(){
         </main>
       </div>
     </BrowserRouter>
-  )
   )
 }
