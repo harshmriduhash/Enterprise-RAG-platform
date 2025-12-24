@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Nav from './components/Nav'
+import Footer from './components/Footer'
+import Home from './pages/Home'
+import Pricing from './pages/Pricing'
 import Dashboard from './pages/Dashboard'
 import Ingest from './pages/Ingest'
 import Documents from './pages/Documents'
@@ -22,16 +25,20 @@ export default function App(){
   return (
     <BrowserRouter>
       <div className="App">
-        <Nav />
+        <Nav token={token} setToken={setToken} apiKey={apiKey} setApiKey={setApiKey} />
         <main className="container">
           <Routes>
-            <Route path="/" element={<Dashboard/>} />
+            <Route path="/" element={<Home/>} />
+            <Route path="/pricing" element={<Pricing/>} />
+            <Route path="/dashboard" element={<Dashboard/>} />
             <Route path="/ingest" element={<Ingest />} />
             <Route path="/documents" element={<Documents />} />
             <Route path="/usage" element={<Usage />} />
             <Route path="/auth" element={<Auth />} />
+            <Route path="*" element={<Navigate to="/" replace />} />
           </Routes>
         </main>
+        <Footer />
       </div>
     </BrowserRouter>
   )

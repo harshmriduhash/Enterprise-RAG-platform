@@ -1,22 +1,27 @@
 import React from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link, NavLink, useNavigate } from 'react-router-dom'
+import { motion } from 'framer-motion'
 
 export default function Nav({ token, setToken, apiKey, setApiKey }){
   const navigate = useNavigate()
   function handleLogout(){
-    setToken(null)
-    setApiKey(null)
+    if(setToken) setToken(null)
+    if(setApiKey) setApiKey(null)
     navigate('/auth')
   }
   return (
     <header className="nav">
       <div className="nav-left">
-        <Link to="/" className="brand">Enterprise RAG</Link>
+        <motion.div whileTap={{ scale: 0.98 }}>
+          <Link to="/" className="brand">Enterprise RAG</Link>
+        </motion.div>
         <nav className="nav-links">
-          <Link to="/">Dashboard</Link>
-          <Link to="/ingest">Ingest</Link>
-          <Link to="/docs">Documents</Link>
-          <Link to="/usage">Usage</Link>
+          <NavLink to="/" end>Home</NavLink>
+          <NavLink to="/dashboard">Dashboard</NavLink>
+          <NavLink to="/pricing">Pricing</NavLink>
+          <NavLink to="/ingest">Ingest</NavLink>
+          <NavLink to="/documents">Documents</NavLink>
+          <NavLink to="/usage">Usage</NavLink>
         </nav>
       </div>
       <div className="nav-right">

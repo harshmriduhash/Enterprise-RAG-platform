@@ -39,6 +39,23 @@ body{
 .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:16px;border-radius:10px;flex:1;min-width:200px}
 .hero{margin-top:18px;padding:14px;border-radius:8px;background:linear-gradient(90deg, rgba(124,58,237,0.08), rgba(2,6,23,0.02));}
 
+/* Footer */
+.footer{padding:18px 0;margin-top:28px;border-top:1px solid rgba(255,255,255,0.03);}
+
+/* Buttons */
+.btn{cursor:pointer}
+
+/* Cards tweaks */
+.cards{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}
+.card h3{margin:0 0 8px 0}
+
+/* small screens */
+@media(max-width:720px){
+	.nav{padding:10px}
+	.nav-links{flex-wrap:wrap}
+	.nav-right{width:100%;justify-content:flex-end;margin-top:8px}
+}
+
 .form input[type="file"], .form input, .form button{display:block;width:100%;margin:8px 0;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.04);background:transparent;color:var(--text)}
 .form .row{display:flex;gap:8px}
 .form .row button{flex:1}
