@@ -15,7 +15,7 @@ export default function Home(){
           <p className="muted">Upload Markdown documents and build a local index for quick demos.</p>
         </div>
         <div className="card">
-          <h3>Query</h3>
+          <h3>Query!</h3>
           <p className="muted">Run queries against ingested content and evaluate retrieval quality.</p>
         </div>
         <div className="card">
