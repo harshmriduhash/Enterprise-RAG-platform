@@ -42,7 +42,7 @@ export default function Ingest(){
       <h2>Ingest</h2>
       <form onSubmit={handleSubmit} className="card form">
         <input type="file" onChange={e=>setFile(e.target.files[0])} />
-        <button type="submit">Upload</button>
+        <button type="submit">Upload now</button>
         <p>{status}</p>
       </form>
       <section className="notes">
