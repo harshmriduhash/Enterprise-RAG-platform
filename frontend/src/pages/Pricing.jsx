@@ -16,7 +16,7 @@ export default function Pricing(){
         </div>
         <div className="card">
           <h3>Pilot</h3>
-          <p className="muted">$499/month • Shared SLA • Email support</p>
+          <p className="muted">$599/month • Shared SLA • Email support</p>
         </div>
         <div className="card">
           <h3>Enterprise</h3>
