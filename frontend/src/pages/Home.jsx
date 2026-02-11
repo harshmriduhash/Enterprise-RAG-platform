@@ -11,7 +11,7 @@ export default function Home(){
 
       <motion.div className="cards" initial={{ opacity:0 }} animate={{ opacity:1 }} transition={{ delay:0.2 }}>
         <div className="card">
-          <h3>Ingest</h3>
+          <h3>Ingest!</h3>
           <p className="muted">Upload Markdown documents and build a local index for quick demos.</p>
         </div>
         <div className="card">
