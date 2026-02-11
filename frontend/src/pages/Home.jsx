@@ -19,7 +19,7 @@ export default function Home(){
           <p className="muted">Run queries against ingested content and evaluate retrieval quality.</p>
         </div>
         <div className="card">
-          <h3>API Keys</h3>
+          <h3>API Keys!</h3>
           <p className="muted">Create API keys for tenant-level access and measure usage.</p>
         </div>
       </motion.div>
