@@ -28,7 +28,7 @@ export default function Nav({ token, setToken, apiKey, setApiKey }){
         {token ? (
           <>
             <span className="api-key">{apiKey ? apiKey.slice(0,10) + '…' : 'No API Key'}</span>
-            <button className="btn btn-ghost" onClick={handleLogout}>Logout</button>
+            <button className="btn btn-ghost" onClick={handleLogout}>Logout!</button>
           </>
         ) : (
           <Link to="/auth" className="btn">Sign in</Link>
